@@ -1,0 +1,25 @@
+body{
+	background: url(../img/bg.gif) repeat-y;
+}
+div {margin: 0; padding: 0;}
+#left {
+	float:left;
+  width: 250px;
+}
+#middle {
+	float:left;
+  width: 250px;
+}
+#right {
+	float:left;
+  margin-left: 2px;
+}
+.imageholder {
+	padding: 4px;
+  border: 1px solid #aaa;
+  clear:both;
+  display: block;
+}
+table.datagrid td {
+	vertical-align: top;
+}
