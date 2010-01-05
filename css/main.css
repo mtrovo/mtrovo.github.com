@@ -1,5 +1,6 @@
 body{
-	background: url(../img/bg.gif) repeat-y;
+	background: url(../img/bg.GIF) repeat-y;
+	font-size: 10pt;
 }
 div {margin: 0; padding: 0;}
 #left {
@@ -13,6 +14,7 @@ div {margin: 0; padding: 0;}
 #right {
 	float:left;
   margin-left: 2px;
+  width: 250px;
 }
 .imageholder {
 	padding: 4px;
@@ -22,4 +24,16 @@ div {margin: 0; padding: 0;}
 }
 table.datagrid td {
 	vertical-align: top;
+}
+h2 {
+	font-family: Georgia;
+	font-size: 2.8em;
+	letter-spacing: -0.1em;
+	text-transform: uppercase;
+}
+.nwgrid .names {
+	text-align: center;
+}
+.nwgrid h3 {
+	margin: 0em auto 0.5em;
 }
