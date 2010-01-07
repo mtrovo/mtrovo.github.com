@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <style type="text/css">
+    body {background-color: black;}
+    .panel {vertical-align:top}
+    .frame {border:none; height: 150px; width: 180px; overflow:hidden;}
+    .closeLink {color: red; font: normal normal bold 10pt Verdana; text-decoration: none; vertical-align:top}
+    .addLink {color:green;font: normal normal bold 10pt Verdana; text-decoration: none;}
+  </style>
+  <script type="text/javascript">
+    var CURR_PANELS='PETR4,VALE5,NETC4,USIM5,IBOV'.split(',');
+    var WINTRADE_URL = 'https://www.wintrade.com.br/Plataform/flashpages/winner_250x212.aspx?symbol=';
+    var DEFAULT_STOCK = 'IBOV';
+    
+    window.onload=function(){
+      for(var i = 0; i < CURR_PANELS.length; i++){
+        addPanelForStock(CURR_PANELS[i]);
+      }
+    }
+    
+    function updatePanelCount(){
+      var panel_num = document.getElementById('panelContainer').childNodes.length;
+      document.cookie='panel_num='+panel_num + ';';
+    }
+    
+    function addPanel(){
+      addPanelForStock(DEFAULT_STOCK);
+    }
+    
+    function addPanelForStock(stock){
+      var container = document.getElementById('panelContainer');
+      
+      var iframe = document.createElement('iframe');
+      iframe.className='frame';
+      iframe.id='frame_' + container.childNodes.length;
+      iframe.border='0';
+      iframe.frameBorder='0';
+      iframe.src = WINTRADE_URL + stock;
+      
+      var link = document.createElement('a');
+      link.className='closeLink';
+      link.iframeref=iframe.id;
+      link.href="javascript:void(0)";
+      link.onclick=function(){
+        var iframe = document.getElementById(this.iframeref);
+        iframe.parentNode.parentNode.removeChild(iframe.parentNode);
+        updatePanelCount();
+      }
+      link.innerHTML = 'X';
+      
+      var div = document.createElement('div');
+      div.className="panel";
+      div.appendChild(iframe);
+      div.appendChild(link);
+      
+      
+      container.appendChild(div);
+      updatePanelCount();
+    }
+  </script>
+</head>
+<body>
+  <form name='mainContent' action="#">
+    <a href="javascript:void(0)" onclick="addPanel()" class="addLink">Add panel</a>
+    <div id="panelContainer"></div>
+  </form>
+</body>
+</html>
