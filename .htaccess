@@ -1,0 +1,19 @@
+# Some of this was stolen from Tatey.com
+
+# Migrated from `date` to `pretty` permalink structure.
+RewriteEngine On
+
+# For debugging. Should set level to 0 in deployment
+#RewriteLog "rewrite.log"
+#RewriteLogLevel 2
+ 
+# Directory index is never accessible.
+# /index.html -> /
+# /foo/index.html -> /foo/
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_URI} ^\/.*index\.html$
+RewriteRule ^(.*)index.html$ /$1 [R=301,L]
+
+# compress all text & html:
+AddOutputFilterByType DEFLATE text/html text/plain text/xml
+
