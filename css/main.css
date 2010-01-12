@@ -1,6 +1,7 @@
 body{
-	background: url(../img/bg.GIF) repeat-y;
+	/*background: url(http://farm5.static.flickr.com/4064/4254626989_dd6baf2614_b.jpg) no-repeat;*/
 	font-size: 10pt;
+	margin-left:0.4em;
 }
 div {margin: 0; padding: 0;}
 #left {
@@ -15,6 +16,9 @@ div {margin: 0; padding: 0;}
 	float:left;
   margin-left: 2px;
   width: 250px;
+}
+.empty_posts {
+margin:1em 0 1em;
 }
 .imageholder {
 	padding: 4px;

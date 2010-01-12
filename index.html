@@ -1,21 +1,25 @@
 ---
 layout: default
 title: MTROVO's github
-description: Personal website of Mislav Marohnić
+description: Personal website of Moises Trovo
 ---
 
 <h1>{{ page.title }}</h1>
 
 <p class="subtext">Personal website of <a href="/about/"><strong>Moises Trovo</strong></a></p>
 
-<div id="links_me">
+<div class="links_me">
 <strong>
   <a href="/projects/">projects</a>
-  | <a href="http://twitter.com/mislav" rel="me">twitter.com/mtrovo</a>
-  | <a href="http://github.com/mislav" rel="me">github.com/mtrovo</a>
-<strong>
+  | <a href="http://twitter.com/mtrovo" rel="me">twitter.com/mtrovo</a>
+  | <a href="http://github.com/mtrovo" rel="me">github.com/mtrovo</a>
+</strong>
 </div>
-
+{% if site.posts == empty %}
+<div class="empty_posts">
+No posts to display
+</div>
+{% else %}
 <ol class="posts">
   {% for post in site.posts %}
     <li>
@@ -24,4 +28,13 @@ description: Personal website of Mislav Marohnić
       <span class="categories">{{ post.categories | array_to_sentence_string }}</span>
     </li>
   {% endfor %}
+{% endif %}
 </ol>
+
+<div class="links_me">
+<strong>
+  <a href="/projects/">projects</a>
+  | <a href="http://twitter.com/mtrovo" rel="me">twitter.com/mtrovo</a>
+  | <a href="http://github.com/mtrovo" rel="me">github.com/mtrovo</a>
+<strong>
+</div>
