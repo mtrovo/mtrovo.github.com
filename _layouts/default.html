@@ -1,24 +1,116 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-  <head profile="http://gmpg.org/xfn/11">
-    <link rel="stylesheet" type="text/css" href="/css/screen.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <title>{{ page.title | strip_html }}</title>
-    {% if page.description %}
-    <meta name="description" content="{{ page.description | xml_escape }}">
-    {% endif %}
-    <meta name="author" content="Moises Trovo &lt;moises.trovo@gmail.com&gt;">
-    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-    <link rel="icon" href="/favicon.ico">
-    
-    {% if page.styles %}
-    <style type="text/css" media="screen">{{ page.styles }}</style>
-    {% endif %}
-  </head>
-  
-  <body>
-    {{ content }}
-    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<title>{{ page.title | strip_html }}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="/css/undohtml.css" rel="stylesheet" type="text/css" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+{% if page.description %}
+<meta name="description" content="{{ page.description | xml_escape }}">
+{% endif %}
+<meta name="author" content="Moises Trovo &lt;moises.trovo@gmail.com&gt;">
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<link rel="icon" href="/favicon.ico">
+{% if page.styles %}
+<style type="text/css" media="screen">{{ page.styles }}</style>
+{% endif %}
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" >
+   function callback_twitter(json, status){
+    alert(status);
+   }
+   $(function(){
+    $.getJSON("http://twitter.com/statuses/user_timeline/mtrovo.json?callback=?", "", callback_twitter);
+   });
+</script>
+
+</head>
+<body>
+<div id="header">
+  <div style="float:right;margin-top: 26px">
+<p class="subtext">Personal website of <a href="/about/"><strong>Moises Trovo</strong></a></p>
+</div>
+  <h1>The Burnt Design</h1>
+
+</div>
+<div id="container">
+<div id="infinitum">
+  <p><strong>Navigation<br />
+    </strong><a href="#">Home</a></p>
+  <p><a href="#">Colophon</a></p>
+  <p><a href="#">Photography</a></p>
+  <p><a href="#">Portfolio</a></p>
+  <p><a href="#">Contact</a><strong><br />
+      <br />
+      Search</strong><br />
+  </p>
+  <form name="form1" id="form1" method="post" action="">
+    <input type="text" name="textfield" />
+  </form>
+  <p>&nbsp;</p>
+  <p><strong>Monthly Archives</strong></p>
+  <p><a href="#">June 2005 <br />
+      May 2005</a></p>
+  <p><a href="#">April 2005</a></p>
+  <p><a href="#">March 2005</a></p>
+  <p> <strong><br />
+      Categories</strong></p>
+  <p><a href="#">Discussion</a></p>
+  <p><a href="#">Jokes</a></p>
+  <p><a href="#">Typography</a></p>
+  <p><a href="#">Design</a></p>
+  <p><a href="#">CSS</a></p>
+  <p><a href="#">XHTML</a></p>
+  <p><a href="#">Politics</a></p>
+  <p>&nbsp;</p>
+  <p><strong>Feeds</strong></p>
+  <p><a href="#">RSS</a></p>
+  <p><a href="#">Atom</a></p>
+  <p>&nbsp;</p>
+  <p><strong>Validation</strong></p>
+  <p><a href="http://validator.w3.org/check?uri=referer" target="_blank">Valid 
+    XHTML</a> </p>
+  <p><a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank">Valid 
+      CSS</a>
+    </p>
+  <p>&nbsp;</p>
+  <p><strong>Disclaimers</strong></p>
+  <p>&copy; Your Name Here</p>
+  <p><a href="http://smallpark.org">Design by Smallpark</a></p>
+  <p>&nbsp;</p>
+</div>
+
+<div id="mightylinks"> 
+ <p><strong> I like linking to people</strong></p>
+<ul>
+<li><a href="#">Mandatory CSS-SSC Update</a> <br />
+Suspendisse eu mauris. Pellentesque auctor. Fusce eu massa.  </li>
+<li><a href="#">Latest Macdonald's theft</a> <br />
+  In lacinia magna in purus.
+          
+</li>
+<li><a href="#">I like burgers </a> <br />
+  In lacinia magna in purus.
+          
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egesta.</li>
+<li><a href="#">Bob's going to College! </a> <br />
+  Torbi rutrum, nisi in ultricies tristique, diam velit convallis nisi, ut ornare mi.</li>
+<li><a href="#">Eating causes obesity. </a><br />
+  Fusce pellentesque turpis a mauris dapibus euismod. Donec nec eros iaculis augue malesuada consequat.
+            
+Morbi rutrum, nisi in ultricies <br />
+      <strong><br />
+      </strong><a href="#">View the  Archive &gt;</a> </li>
+</ul>
+</div>
+
+<div class="text">
+{{ content }}
+</div>
+</div>
+
+   
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -28,5 +120,5 @@ try {
 var pageTracker = _gat._getTracker("UA-12417205-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-  </body>
+</body>
 </html>
