@@ -18,22 +18,24 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" >
    function callback_twitter(json, status){
-    alert(status);
+     var str = json[0].text;
+     alert(str);
+     $("#lasttweet").html(str);
    }
    $(function(){
-    $.getJSON("http://twitter.com/statuses/user_timeline/mtrovo.json?callback=?", "", callback_twitter);
+    $.getJSON("http://twitter.com/statuses/user_timeline/mtrovo.json?count=1&callback=?", "", callback_twitter);
    });
 </script>
 
 </head>
 <body>
-<div id="header">
-  <div style="float:right;margin-top: 26px">
-<p class="subtext">Personal website of <a href="/about/"><strong>Moises Trovo</strong></a></p>
-</div>
-  <h1>The Burnt Design</h1>
-
-</div>
+<div id="header"><div class="inner">
+	
+	<h1 id="logo"><a title="click here to return to the homepage" href="/">MTROVO</a></h1>
+	
+	<ul id="nav"><li><a href="/overview.php" class="">Overview</a></li><li><a href="/documentation.php" class="">Documentation</a></li><li><a href="/demo.php" class="">Demo</a></li><li><a href="/license.php" class="">License</a></li><li><a href="http://grakalic.com" target="_blank" class="external">Author</a></li><li><a href="/contact.php" class="">Contact</a></li></ul>	
+	
+</div></div>
 <div id="container">
 <div id="infinitum">
   <p><strong>Navigation<br />
@@ -43,11 +45,9 @@
   <p><a href="#">Portfolio</a></p>
   <p><a href="#">Contact</a><strong><br />
       <br />
-      Search</strong><br />
+      Last Status</strong><br />
   </p>
-  <form name="form1" id="form1" method="post" action="">
-    <input type="text" name="textfield" />
-  </form>
+  <span id="lasttweet"></span>
   <p>&nbsp;</p>
   <p><strong>Monthly Archives</strong></p>
   <p><a href="#">June 2005 <br />

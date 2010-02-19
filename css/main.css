@@ -1,8 +1,5 @@
-body{
-	/*background: url(http://farm5.static.flickr.com/4064/4254626989_dd6baf2614_b.jpg) no-repeat;*/
-	font-size: 10pt;
-	margin-left:0.4em;
-}
+/* base */
+body{ font-size: 10pt; margin: 0; padding: 0; font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif; line-height: 2em;color: #666;background-color: #FFFFFF;}
 div {margin: 0; padding: 0;}
 #left {
 	float:left;
@@ -35,9 +32,42 @@ h2 {
 	letter-spacing: -0.1em;
 	text-transform: uppercase;
 }
-.nwgrid .names {
-	text-align: center;
-}
-.nwgrid h3 {
-	margin: 0em auto 0.5em;
-}
+
+.nwgrid .names {text-align: center;}
+.nwgrid h3 {margin: 0em auto 0.5em;}
+
+/* burnt compressed and modified */
+img {margin-bottom: 2em;}
+h1 {font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif;font-size:16px;line-height: 1em;font-weight: 900;}
+#container {background: url(/img/dot-top.gif) top repeat-x;width: 730px;margin-bottom: 5em;}
+h2 {color: #CCC;margin-bottom:2em;}
+.text {width: 350px;padding-top: 20px;background: url(/img/dot.gif) right top repeat-y;padding-right: 20px;margin-right: 20px;}
+#infinitum {float: right;width: 150px;padding-top: 20px;background: url(/img/dot.gif) right top repeat-y;padding-left: 20px;}
+#mightylinks {padding-top: 20px;float: right;width: 150px;background: url(/img/dot.gif) right top repeat-y;padding-right: 20px;}
+a {color: #CC6600;}
+a:hover {color: #999;}
+li {margin-bottom: 2em;}
+form {height: 15px;}
+input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 1.5px;color: #666;}
+
+
+/* header */
+#header{position:relative;height:68px;background:url(/img/bg_header.gif) repeat-x;}	
+#header h1 {position:absolute;top:24px;}
+.inner{	margin:0 auto;width:908px;text-align:left;position:relative;}
+
+/* navigation */
+#nav, #nav ul, #nav li{margin:0;padding:0;list-style:none;}
+#nav{position:absolute;right:0;top:24px;}
+#nav li, #nav li a{float:left;display:inline;position:relative;line-height:22px;height:22px;}
+#nav li a{color:#fff;padding:0 15px;margin-right:1px;}
+#nav li.selected a, #nav li a:hover, #nav li a.over{background:#1a1a18;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
+#nav ul{position:absolute;left:0;top:22px;padding:10px 20px;width:200px;background:#1a1a18;-webkit-border-radius: 3px;-moz-border-radius: 3px;display:none;z-index:1000;}
+#nav ul li{float:none;display:block;}
+#nav ul li a{padding:0;}
+
+/* tweets */
+#fav-tweets { list-style: none; margin: 0; }
+#fav-tweets li { margin: 0 0 5px 0; }
+#fav-tweets li a { display: block; padding: 5px; background: rgba(0,0,0,0.4); color: #777; }
+#fav-tweets li a:hover { background: rgb(0,0,0); background: rgba(0,0,0,0.1); color: white; }
