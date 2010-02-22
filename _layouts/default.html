@@ -19,11 +19,10 @@
 <script type="text/javascript" >
    function callback_twitter(json, status){
      var str = json[0].text;
-     alert(str);
      $("#lasttweet").html(str);
    }
    $(function(){
-    $.getJSON("http://twitter.com/statuses/user_timeline/mtrovo.json?count=1&callback=?", "", callback_twitter);
+    $.getJSON("http://twitter.com/statuses/user_timeline/mtrovo.json?count=5&callback=?", "", callback_twitter);
    });
 </script>
 
