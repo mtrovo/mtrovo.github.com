@@ -1,45 +1,12 @@
 /* base */
 body{ font-size: 10pt; margin: 0; padding: 0; font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif; line-height: 2em;color: #666;background-color: #FFFFFF;}
 div {margin: 0; padding: 0;}
-#left {
-	float:left;
-  width: 250px;
-}
-#middle {
-	float:left;
-  width: 250px;
-}
-#right {
-	float:left;
-  margin-left: 2px;
-  width: 250px;
-}
-.empty_posts {
-margin:1em 0 1em;
-}
-.imageholder {
-	padding: 4px;
-  border: 1px solid #aaa;
-  clear:both;
-  display: block;
-}
-table.datagrid td {
-	vertical-align: top;
-}
-h2 {
-	font-family: Georgia;
-	font-size: 2.8em;
-	letter-spacing: -0.1em;
-	text-transform: uppercase;
-}
-
-.nwgrid .names {text-align: center;}
-.nwgrid h3 {margin: 0em auto 0.5em;}
+.container {display:block;}
 
 /* burnt compressed and modified */
 img {margin-bottom: 2em;}
 h1 {font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif;font-size:16px;line-height: 1em;font-weight: 900;}
-#container {background: url(/img/dot-top.gif) top repeat-x;width: 730px;margin-bottom: 5em;}
+#container {width: 800px;margin: 0 auto;}
 h2 {color: #CCC;margin-bottom:2em;}
 .text {width: 350px;padding-top: 20px;background: url(/img/dot.gif) right top repeat-y;padding-right: 20px;margin-right: 20px;}
 #infinitum {float: right;width: 150px;padding-top: 20px;background: url(/img/dot.gif) right top repeat-y;padding-left: 20px;}
@@ -52,7 +19,7 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 
 
 /* header */
-#header{position:relative;height:68px;background:url(/img/bg_header.gif) repeat-x;}	
+#header{position:relative;height:77px;background:url(/img/bg_header.gif) repeat-x;}	
 #header h1 {position:absolute;top:24px;}
 .inner{	margin:0 auto;width:908px;text-align:left;position:relative;}
 
@@ -66,8 +33,27 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 #nav ul li{float:none;display:block;}
 #nav ul li a{padding:0;}
 
-/* tweets */
-#fav-tweets { list-style: none; margin: 0; }
+
+/* footer */
+footer.container { clear:both }
+footer h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 4px; color: white; }
+footer p { margin: 0 0 10px 0; }
+.footer-icon-list { list-style: none; margin: 0 0 20px 0; }
+.footer-icon-list li { display: inline; }
+.footer-icon-list li a img { opacity: 0.8; }
+.footer-icon-list li a:hover img { opacity: 1 }
+
+.footer-col { width: 220px; float: left; margin-left: 25px; }
+.fav { width: 332px; }
+.fwend { width: 170px; }
+
+#friend-list { list-style: none; margin: 0; }
+#friend-list li { margin: 0 0 5px 0; }
+#friend-list li a { display: block; padding: 2px 8px; background: rgba(0,0,0,0.4); color: #777; }
+#friend-list li a:hover { background: rgb(0,0,0); background: rgba(0,0,0,0.1); color: white; }
+
+/* Tweets */
+#fav-tweets { list-style: none; margin: 0; line-height:1em; }
 #fav-tweets li { margin: 0 0 5px 0; }
 #fav-tweets li a { display: block; padding: 5px; background: rgba(0,0,0,0.4); color: #777; }
 #fav-tweets li a:hover { background: rgb(0,0,0); background: rgba(0,0,0,0.1); color: white; }
