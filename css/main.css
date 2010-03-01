@@ -4,7 +4,6 @@ div {margin: 0; padding: 0;}
 .container {display:block;}
 
 /* burnt compressed and modified */
-img {margin-bottom: 2em;}
 h1 {font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif;font-size:16px;line-height: 1em;font-weight: 900;}
 #container {width: 800px;margin: 0 auto;}
 h2 {color: #CCC;margin-bottom:2em;}
@@ -35,8 +34,9 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 
 
 /* footer */
-footer.container { clear:both }
-footer h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 4px; color: white; }
+footer.container { clear:both;padding-bottom:2em;background-color:#252523;}
+footer .fotter-div {margin:0 auto; width:900px;}
+footer h4 { font-size: 16px; text-transform: uppercase; letter-spacing: 4px;}
 footer p { margin: 0 0 10px 0; }
 .footer-icon-list { list-style: none; margin: 0 0 20px 0; }
 .footer-icon-list li { display: inline; }
@@ -46,6 +46,8 @@ footer p { margin: 0 0 10px 0; }
 .footer-col { width: 220px; float: left; margin-left: 25px; }
 .fav { width: 332px; }
 .fwend { width: 170px; }
+.powered-by {clear:both;font-size:0.8em;line-height:1.5em;padding:1em 0 0 2em;}
+.powered-by .box {position:relative;text-align:left;}
 
 #friend-list { list-style: none; margin: 0; }
 #friend-list li { margin: 0 0 5px 0; }
