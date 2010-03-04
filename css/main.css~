@@ -45,7 +45,7 @@ footer p { margin: 0 0 10px 0; }
 .footer-col { width: 220px; float: left; margin-left: 25px; }
 .fav { width: 332px; }
 .networking { width: 275px; }
-.powered-by {clear:both;font-size:0.8em;line-height:1.5em;padding:2em 0 0 2em;}
+.powered-by {clear:both;font-size:0.8em;line-height:1.5em;padding:1em 0 0 2em;}
 .powered-by .box {position:relative;text-align:left;}
 
 #friend-list { list-style: none; margin: 0; }

@@ -20,7 +20,7 @@
    function callback_twitter(json, status){
      var div = $("#last-tweets");
      var str = $(json).each(function(i, t){
-       $("<a></a>",{text: t.text, href: "http://twitter.com/" + t.user.screen_name + "/status/" + t.id}).wrap("<li></li>").parents().appendTo(div);
+       $("<a></a>",{text: t.text}).wrap("<li></li>").parents().appendTo(div);
      });
    }
    $(function(){
