@@ -5,13 +5,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/css/undohtml.css" rel="stylesheet" type="text/css" />
 <link href="/css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
 {% if page.description %}
-<meta name="description" content="{{ page.description | xml_escape }}">
+<meta name="description" content="{{ page.description | xml_escape }}" />
 {% endif %}
-<meta name="author" content="Moises Trovo &lt;moises.trovo@gmail.com&gt;">
-<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
-<link rel="icon" href="/favicon.ico">
+<meta name="author" content="Moises Trovo &lt;moises.trovo@gmail.com&gt;" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+<link rel="icon" href="/favicon.ico" />
 {% if page.styles %}
 <style type="text/css" media="screen">{{ page.styles }}</style>
 {% endif %}
@@ -20,7 +20,7 @@
    function callback_twitter(json, status){
      var div = $("#last-tweets");
      var str = $(json).each(function(i, t){
-       $("<a></a>",{text: t.text, href: "http://twitter.com/" + t.user.screen_name + "/status/" + t.id}).wrap("<li></li>").parents().appendTo(div);
+       $("<a><\/a>",{text: t.text, href: "http://twitter.com/" + t.user.screen_name + "/status/" + t.id}).wrap("<li><\/li>").parents().appendTo(div);
      });
    }
    $(function(){
@@ -32,9 +32,9 @@
 <body>
 <div id="header"><div class="inner">
 	
-	<h1 id="logo"><a title="click here to return to the homepage" href="/">MTROVO</a></h1>
+	<h1 id="logo"><a title="click here to return to the homepage" href="/"></a></h1>
 	
-	<ul id="nav"><li><a href="#" class="">Projects</a></li><li><a href="#" class="">Repositories</a></li><li><a href="#">About</a></li><li><a href="#" class="">Contact</a></li></ul>	
+	<ul id="nav"><li><a href="#" class="/index.html">Home</a></li><li><a href="/blog.html" class="">Blog</a></li><li><a href="#" class="/projects.html">Projects</a></li><li><a href="http://github.com/mtrovo" class="">GitHub</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html" class="">Contact</a></li></ul>	
 	
 </div></div>
 <div id="container">
@@ -115,14 +115,16 @@ Morbi rutrum, nisi in ultricies <br />
     <div class="footer-col networking">
     
         <h4>Networking</h4>
-        
+        <p> Liked me or my work? Do you have a question or need a job done? Feel free to use one of the following networks to contact me.</p>
         <ul class="footer-icon-list">
-            <li><a href="http://linkedin.com/mtrovo"><img alt="LinkedIn" src="/img/linkedin_32.png"> http://linkedin.com/mtrovo</a></li>
-            <li><a href="mailto:moises.trovo@gmail.com" title="Email"><img alt="Google Talk" src="/img/googletalk_32.png">moises.trovo@gmail.com</a></li>
-            <li><a href="http://facebook.com/mtrovo"><img alt="Facebook" src="img/facebook_32.png">http://facebook.com/mtrovo</a></li>
-            <li><a href="http://twitter.com/mtrovo"><img alt="Twitter" src="/img/twitter_32.png">http://twitter.com/mtrovo</a></li>
+            <li><a href="http://linkedin.com/mtrovo"><img alt="LinkedIn" src="/img/linkedin_32.png"/></a></li>
+            <li><a href="mailto:moises.trovo@gmail.com" title="Email"><img alt="Google Talk" src="/img/googletalk_32.png"/></a></li>
+            <li><a href="http://facebook.com/mtrovo"><img alt="Facebook" src="img/facebook_32.png"/></a></li>
+            <li><a href="http://twitter.com/mtrovo"><img alt="Twitter" src="/img/twitter_32.png"/></a></li>
         </ul>
-        <img style="border: medium none ; margin: 0pt; padding: 0pt 2px 0pt 0pt;" src="http://www.google.com/talk/service/badge/Show?tk=z01q6amlqajsusa4k8dl7s1nndbkhdv555f9j169dcm9nnl89p3sg1hju1ul7dm290btbclqjboc79scfnfl148egsq1fir1f12i889pn8nih19ke1ck50jdsj0mfrqeklbl4o432h3mot2irr7bpgjskq0cmtqqsn32a8mkmbvj9osok9r4fo6620irs7i7mgj87i0ab7peligmdaqsdkseiiug0&amp;w=9&amp;h=9" alt="" height="9" width="9"><a href="http://www.google.com/talk/service/badge/Start?tk=z01q6amlqajsusa4k8dl7s1nndbkhdv555f9j169dcm9nnl89p3sg1hju1ul7dm290btbclqjboc79scfnfl148egsq1fir1f12i889pn8nih19ke1ck50jdsj0mfrqeklbl4o432h3mot2irr7bpgjskq0cmtqqsn32a8mkmbvj9osok9r4fo6620irs7i7mgj87i0ab7peligmdaqsdkseiiug0" target="_blank" title="Click here to chat with Moises Trovo">Contact me on Google Talk</a>
+        <div class="gtalk-div">
+        <img style="border: medium none ; margin: 0pt; padding: 0pt 2px 0pt 0pt;" src="http://www.google.com/talk/service/badge/Show?tk=z01q6amlqajsusa4k8dl7s1nndbkhdv555f9j169dcm9nnl89p3sg1hju1ul7dm290btbclqjboc79scfnfl148egsq1fir1f12i889pn8nih19ke1ck50jdsj0mfrqeklbl4o432h3mot2irr7bpgjskq0cmtqqsn32a8mkmbvj9osok9r4fo6620irs7i7mgj87i0ab7peligmdaqsdkseiiug0&amp;w=9&amp;h=9" alt="" height="9" width="9" /><a href="http://www.google.com/talk/service/badge/Start?tk=z01q6amlqajsusa4k8dl7s1nndbkhdv555f9j169dcm9nnl89p3sg1hju1ul7dm290btbclqjboc79scfnfl148egsq1fir1f12i889pn8nih19ke1ck50jdsj0mfrqeklbl4o432h3mot2irr7bpgjskq0cmtqqsn32a8mkmbvj9osok9r4fo6620irs7i7mgj87i0ab7peligmdaqsdkseiiug0" target="_blank" title="Click here to chat with Moises Trovo">Contact me on Google Talk</a>
+        </div>
      </div>
     
     <div class="footer-col last fav">
@@ -136,8 +138,8 @@ Morbi rutrum, nisi in ultricies <br />
         <p>This site is built using the <a href="http://github.com/mojombo/jekyll">Jekyll</a> library and hosted on <a href="http://github.com/">GitHub</a>. The source code used to create this web site is <a href="http://github.com/mtrovo/mtrovo.github.com">publicly available</a> on GitHub as well.</p>
         <p class="box">
             
-  				    <a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img width="88" height="31" style="float:left;margin-right:1em;" alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
-  Except where otherwise <a href="/policies#license" class="subfoot">noted</a>, content on this site is<br>
+  				    <a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img width="88" height="31" style="float:left;margin-right:1em;" alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+  Except where otherwise <a href="/policies#license" class="subfoot">noted</a>, content on this site is<br />
   licensed under a <a class="subfoot" href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 License</a>
             
   			  </p>
