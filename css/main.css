@@ -1,5 +1,5 @@
 /* base */
-body{ font-size: 10pt; margin: 0; padding: 0; font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif; line-height: 2em;color: #666;background-color: #FFFFFF;}
+body{ font-size: 10pt; margin: 0; padding: 0; font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif; line-height: 2em;color: #666;background: url(/img/light_texture.jpg) repeat;}
 div {margin: 0; padding: 0;}
 .container {display:block;}
 
@@ -40,7 +40,8 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 .footer p { margin: 0 0 10px 0; }
 .footer-icon-list { list-style: none; margin: 0 0 20px 0; }
 .footer-icon-list li a img { opacity: 0.8;float:left;margin-right:1em; }
-.footer-icon-list li a:hover img { opacity: 1 }
+.footer-icon-list li a:hover img { opacity: 1; }
+.footer .gtalk-div {clear:both}
 
 .footer-col { width: 220px; float: left; margin-left: 25px; }
 .fav { width: 332px; }
