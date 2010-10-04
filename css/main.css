@@ -37,9 +37,9 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 .footer.container { clear:both;padding-bottom:2em;background-color:#252523;}
 .footer .fotter-div {margin:0 auto; width:900px;}
 .footer h4 { font-size:16px;text-transform:uppercase;letter-spacing:4px;margin-bottom:5px;}
-.footer p { margin: 0 0 10px 0; }
+.footer p { margin: 0 0 10px 0; color:#ddd;background-color:#353533}
 .footer-icon-list { list-style: none; margin: 0 0 20px 0; }
-.footer-icon-list li a img { opacity: 0.8;float:left;margin-right:1em; }
+.footer-icon-list li {float:left;margin:0 17px;width:30px;}
 .footer-icon-list li a:hover img { opacity: 1; }
 .footer .gtalk-div {clear:both}
 
@@ -47,6 +47,7 @@ input {border: 1px solid #CCC;background-color:#FFFFFF;font-size: 11px;padding: 
 .fav { width: 332px; }
 .networking { width: 275px; }
 .powered-by {clear:both;font-size:0.8em;line-height:1.5em;padding:2em 0 0 2em;}
+.powered-by p {color: #666; background: none}
 .powered-by .box {position:relative;text-align:left;}
 
 #friend-list { list-style: none; margin: 0; }
