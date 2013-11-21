@@ -4,18 +4,115 @@
 	<meta charset="UTF-8">
 	<title>MTROVO</title>
   <link rel="stylesheet" href="app.css" />
+
 </head>
-<body><div id="placeholder">
-		<div id="content">
-			<ul>
-        <!--<li><a href="http://mtrovo.github.com/blog"><span class="iconp"><img src="img/glyphicons_039_notes.png" />   </span><span class='text'>BLOG (PT)</span></a></li>-->
-        <li><a href="http://github.com/mtrovo"><span class="iconp"><img src="img/glyphicons_341_github.png" />  </span><span class='text'>GITHUB</span></a></li>
-        <li><a href="http://www.linkedin.com/in/moisestrovo"><span class="iconp"><img src="img/glyphicons_337_linked_in.png" /> </span><span class='text'>LINKEDIN</span></a></li>
-        <li><a href="http://twitter.com/mtrovo"><span class="iconp"><img src="img/glyphicons_322_twitter.png" /> </span><span class='text'>TWITTER</span></a></li>
-        <li><a href="http://facebook.com/mtrovo"><span class="iconp"><img src="img/glyphicons_320_facebook.png" /></span><span class='text'>FACEBOOK</span></a></li>
-        <li><a href="mailto:moises.trovo@gmail.com"><span class="iconp email"><img src="img/glyphicons_010_envelope.png" /></span><span class='text'>EMAIL</span></a></li>
-			</ul>
-		</div>
-	</div>
-</body>
-</html>
+<body>
+  <ul id="scene">
+    <li class="layer" data-depth="0.25"><div class="wall">
+     <img src="img/wall.jpg">
+   </div></li>
+   <li class="layer" data-depth="0.20"><div class="slender">
+     <img src="img/slender.png">
+   </div></li>
+   <li class="layer" data-depth="0.20"><div class="slender">
+     <a href="#"></a>
+   </div></li>
+   <li class="layer" data-depth="0.05"><div class="glasses">
+     <img src="img/bg.jpg">
+
+   </div>
+ </li>
+   <li class="layer" data-depth="0.00"><div class="canvas">
+     <canvas id="static"></canvas>
+
+   </div>
+ </li>
+ </ul>
+<!--
+-->
+<div id="content">
+ <ul>
+  <!-- <li><a href="http://mtrovo.github.com/blog"><span class="iconp"><img src="img/glyphicons_039_notes.png" />   </span><span class='text'>BLOG (PT)</span></a></li> -->
+  <li><a href="http://github.com/mtrovo"><span class="iconp"><img src="img/glyphicons_341_github.png" />  </span><span class='text'>GITHUB</span></a></li>
+  <li><a href="http://www.linkedin.com/in/moisestrovo"><span class="iconp"><img src="img/glyphicons_337_linked_in.png" /> </span><span class='text'>LINKEDIN</span></a></li>
+  <li><a href="http://twitter.com/mtrovo"><span class="iconp"><img src="img/glyphicons_322_twitter.png" /> </span><span class='text'>TWITTER</span></a></li>
+  <li><a href="http://facebook.com/mtrovo"><span class="iconp"><img src="img/glyphicons_320_facebook.png" /></span><span class='text'>FACEBOOK</span></a></li>
+  <li><a href="mailto:moises.trovo@gmail.com"><span class="iconp email"><img src="img/glyphicons_010_envelope.png" /></span><span class='text'>EMAIL</span></a></li>
+</ul>
+</div>
+
+
+<script src="js/parallax.min.js"></script>
+<script type="text/javascript">
+function setup_static() {
+  var context = document.querySelector('#static').getContext('2d');
+
+  context.canvas.width = window.innerWidth - 40;
+  context.canvas.height = window.innerHeight - 40;
+
+  var imageData = context.createImageData(context.canvas.width, context.canvas.height);
+
+  var WHITE_TSHOLD=0.99;
+  var COLORS = 4;
+  (function loop() {
+    var rand, color;  
+    for (var i = 0, n = imageData.data.length; i < n;){
+      if(Math.random() < WHITE_TSHOLD){
+        color = 255;
+      } else {
+        rand =Math.floor(Math.random() * COLORS);
+        color = rand / (COLORS-1) * 255;
+      }
+      for(var j=0; j<120; j++) {
+        if(i%4 == 3) {
+            // alpha channel
+            imageData.data[i++]= color == 255 ? 0 : 255;
+          }else {
+            imageData.data[i++] = color;
+          }
+        }
+      }
+
+      context.putImageData(imageData, 0, 0);
+      webkitRequestAnimationFrame(loop);
+    })();
+
+    function dist(x) {
+      //return (Math.pow(x/100 - 2, 3) + 8);
+      return Math.pow(x/100, 2);
+    }
+
+    var sp = document.getElementById('sp')
+    window.onmousemove=function (e) {
+      var startingTop = context.canvas.height/2,
+      startingLeft = context.canvas.width/2,
+      x = Math.round(Math.sqrt(Math.pow(startingTop - event.clientY, 2) +Math.pow(startingLeft - event.clientX, 2)));
+      var y = dist(x > 400 ? 0 : 400 - x );
+      var dist_pct = y / dist(400);
+      if(dist_pct > 1) dist_pct = 1;
+      else if(dist_pct < 0.001) dist_pct = 0.001;
+
+      WHITE_TSHOLD = 1-dist_pct;
+      sp.innerHTML = x + '/' + y;
+    }
+
+  }
+
+
+
+var $scene = document.getElementById('scene');
+var parallax = new Parallax(scene);
+
+	// Resize handler.
+	(resize = function() {
+		$scene.style.width = window.innerWidth - 40 + 'px';
+		$scene.style.height = window.innerHeight - 40 + 'px';
+	})();
+	window.onresize=resize;
+
+  setup_static();
+
+	
+    </script>
+  </body>
+  </html>

@@ -67,3 +67,42 @@ background-color:rgba(73,174,192,1.0);
 -o-transition: background-color 0.5s linear;
 transition: background-color 0.5s linear;
 }
+
+
+#scene {
+  position: absolute;
+  overflow:hidden;
+  padding: 0px;
+  margin: 0px;
+}
+.glasses {
+ position: absolute;
+  bottom:0px;
+  left:0px; 
+}
+
+.slender {
+  text-align: center;
+  margin-top: 100px;
+}
+.slender img{
+-webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px);
+}
+
+.wall {
+width: 2500px;
+height: 100%;
+position:absolute;
+top: 10px;
+left: -500px;
+}
+
+.wall img{
+-webkit-filter: blur(4px); -moz-filter: blur(4px); -o-filter: blur(4px); -ms-filter: blur(4px); filter: blur(4px);
+}
+
+#static {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
