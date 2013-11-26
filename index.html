@@ -44,11 +44,26 @@
 
 <script src="js/parallax.min.js"></script>
 <script type="text/javascript">
+window.requestAnimFrame = function(){
+    return (
+        window.requestAnimationFrame       || 
+        window.webkitRequestAnimationFrame || 
+        window.mozRequestAnimationFrame    || 
+        window.oRequestAnimationFrame      || 
+        window.msRequestAnimationFrame     || 
+        function(/* function */ callback){
+            window.setTimeout(callback, 1000 / 60);
+        }
+    );
+}();
+
+
+
 function setup_static() {
   var context = document.querySelector('#static').getContext('2d');
 
-  context.canvas.width = window.innerWidth - 40;
-  context.canvas.height = window.innerHeight - 40;
+  context.canvas.width = window.innerWidth;
+  context.canvas.height = window.innerHeight;
 
   var imageData = context.createImageData(context.canvas.width, context.canvas.height);
 
@@ -63,7 +78,7 @@ function setup_static() {
         rand =Math.floor(Math.random() * COLORS);
         color = rand / (COLORS-1) * 255;
       }
-      for(var j=0; j<120; j++) {
+      for(var j=0; j<37*4; j++) {
         if(i%4 == 3) {
             // alpha channel
             imageData.data[i++]= color == 255 ? 0 : 255;
@@ -74,7 +89,7 @@ function setup_static() {
       }
 
       context.putImageData(imageData, 0, 0);
-      webkitRequestAnimationFrame(loop);
+      requestAnimFrame(loop);
     })();
 
     function dist(x) {
@@ -82,9 +97,9 @@ function setup_static() {
       return Math.pow(x/100, 2);
     }
 
-    var sp = document.getElementById('sp')
-    window.onmousemove=function (e) {
-      var startingTop = context.canvas.height/2,
+    //var sp = document.getElementById('sp')
+    window.onmousemove=function (event) {
+      var startingTop = 200,
       startingLeft = context.canvas.width/2,
       x = Math.round(Math.sqrt(Math.pow(startingTop - event.clientY, 2) +Math.pow(startingLeft - event.clientX, 2)));
       var y = dist(x > 400 ? 0 : 400 - x );
@@ -93,7 +108,7 @@ function setup_static() {
       else if(dist_pct < 0.001) dist_pct = 0.001;
 
       WHITE_TSHOLD = 1-dist_pct;
-      sp.innerHTML = x + '/' + y;
+      //sp.innerHTML = x + '/' + y;
     }
 
   }
@@ -105,8 +120,8 @@ var parallax = new Parallax(scene);
 
 	// Resize handler.
 	(resize = function() {
-		$scene.style.width = window.innerWidth - 40 + 'px';
-		$scene.style.height = window.innerHeight - 40 + 'px';
+		$scene.style.width = window.innerWidth + 'px';
+		$scene.style.height = window.innerHeight + 'px';
 	})();
 	window.onresize=resize;
 
