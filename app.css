@@ -1,108 +1,122 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+html {
+  background-color: #000; }
+
 body {
-  margin:0;
-  padding:0;
-  font-family:Arial;
-}
+  min-height: 100pt;
+  background: transparent;
+  font-family: 'Open Sans';
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  font-size: 12px; }
 
-#placeholder {
-  margin:0;
-  padding:0;
+#hello {
+  max-width: 460pt;
+  min-width: 200pt;
+  padding: 0 10pt;
+  padding-top: 40pt;
+  margin: 0 auto; }
+  #hello > header {
+    display: none; }
+  #hello article.introduction {
+    color: #000; }
+    #hello article.introduction hgroup h1, #hello article.introduction hgroup h2, #hello article.introduction hgroup h3, #hello article.introduction hgroup h4, #hello article.introduction hgroup h5, #hello article.introduction hgroup h6 {
+      letter-spacing: -1px;
+      line-height: 40px;
+      font-weight: 600;
+      margin-bottom: 1px;
+      font-size: 2em; }
+      #hello article.introduction hgroup h1 span, #hello article.introduction hgroup h2 span, #hello article.introduction hgroup h3 span, #hello article.introduction hgroup h4 span, #hello article.introduction hgroup h5 span, #hello article.introduction hgroup h6 span {
+        background-color: #ddd;
+        display: inline-block;
+        padding: 0 10px; }
+    #hello article.introduction hgroup h2 {
+      letter-spacing: -15px;
+      line-height: 125px;
+      font-size: 11em; }
+      #hello article.introduction hgroup h2 span {
+        padding: 0 30px 0 10px; }
+    #hello article.introduction hgroup h3, #hello article.introduction hgroup h4 {
+      letter-spacing: -2px;
+      line-height: 50px;
+      font-size: 3em;
+      font-weight: 400 !important; }
+    #hello article.introduction hgroup h5, #hello article.introduction hgroup h6 {
+      font-weight: 300; }
+    #hello article.introduction dl {
+      letter-spacing: -1px;
+      line-height: 40px;
+      font-weight: 300;
+      font-size: 2em; }
+      #hello article.introduction dl dt {
+        background-color: #ddd;
+        display: inline-block;
+        padding: 0 10px; }
+      #hello article.introduction dl dd {
+        position: relative;
+        background-color: #ddd;
+        display: inline-block;
+        padding: 0 10px;
+        margin-left: -4px; }
+        #hello article.introduction dl dd ul {
+          display: inline; }
+          #hello article.introduction dl dd ul li {
+            display: none;
+            list-style: none;
+            color: #222; }
+          #hello article.introduction dl dd ul li.active {
+            display: inline-block; }
+          #hello article.introduction dl dd ul li.active-anim {
+            color: #0ff;
+            -webkit-transition: 250ms;
+            -moz-transition: 250ms;
+            transition: 250ms; }
+    #hello article.introduction figure {
+      display: none; }
 
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-
-  background: url(img/bg.jpg) no-repeat 0% 100% #ffffff;
-}
-
-#content {
- position:absolute;
- right:0px;
- bottom:0px;
-}
-
-#content ul {
-list-style:none;
-margin-right:10px;
-}
-#content ul li {
-margin-bottom:10px;
-width:250px;
-}
-#content ul li a {
-display:block;
-padding:10px;
-text-decoration:none;
-color:#333;
-background-color:rgba(73,174,192,0.3);
--webkit-transition: background-color 1s linear;
--moz-transition: background-color 1s linear;
--ms-transition: background-color 1s linear;
--o-transition: background-color 1s linear;
-transition: background-color 1s linear;
-height:19px \9;
-}
-#content ul li a img{
-border:0;
-}
-#content ul li a span.iconp{
-float:left;
-width:24px;
-}
-#content ul li a span.iconp.email{
-margin-top:2px;
-}
-#content ul li a span.text {
-margin-left:10px;
-background-color:#bf0;
-}
-#content ul li a:hover {
-/*background-color:#ff8;*/
-background-color:rgba(73,174,192,1.0);
--webkit-transition: background-color 0.5s linear;
--moz-transition: background-color 0.5s linear;
--ms-transition: background-color 0.5s linear;
--o-transition: background-color 0.5s linear;
-transition: background-color 0.5s linear;
-}
-
-
-#scene {
-  position: absolute;
-  overflow:hidden;
-  padding: 0px;
-  margin: 0px;
-}
-.glasses {
- position: absolute;
-  bottom:0px;
-  left:0px; 
-}
-
-.slender {
-  text-align: center;
-  margin-top: 100px;
-}
-.slender img{
--webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px);
-}
-
-.wall {
-width: 2500px;
-height: 100%;
-position:absolute;
-top: 10px;
-left: -500px;
-}
-
-.wall img{
--webkit-filter: blur(4px); -moz-filter: blur(4px); -o-filter: blur(4px); -ms-filter: blur(4px); filter: blur(4px);
-}
-
-#static {
-  position:absolute;
-  top:0px;
-  left:0px;
-}
+html.transition {
+  background-color: #fff;
+  -webkit-transition: all 250ms linear;
+  -moz-transition: all 250ms linear;
+  -ms-transition: all 250ms linear;
+  -o-transition: all 250ms linear;
+  transition: all 250ms linear;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  transition-delay: 1s; }
+  html.transition #hello article.introduction {
+    color: #fff;
+    -webkit-transition: all 250ms linear;
+    -moz-transition: all 250ms linear;
+    -ms-transition: all 250ms linear;
+    -o-transition: all 250ms linear;
+    transition: all 250ms linear; }
+    html.transition #hello article.introduction hgroup h1 span, html.transition #hello article.introduction hgroup h2 span, html.transition #hello article.introduction hgroup h3 span, html.transition #hello article.introduction hgroup h4 span, html.transition #hello article.introduction hgroup h5 span, html.transition #hello article.introduction hgroup h6 span {
+      background-color: #222;
+      -webkit-transition: all 250ms linear;
+      -moz-transition: all 250ms linear;
+      -ms-transition: all 250ms linear;
+      -o-transition: all 250ms linear;
+      transition: all 250ms linear;
+      -webkit-transition-delay: 1s;
+      -moz-transition-delay: 1s;
+      transition-delay: 1s; }
+    html.transition #hello article.introduction dl dt, html.transition #hello article.introduction dl dd {
+      background-color: #222;
+      -webkit-transition: all 250ms linear;
+      -moz-transition: all 250ms linear;
+      -ms-transition: all 250ms linear;
+      -o-transition: all 250ms linear;
+      transition: all 250ms linear;
+      -webkit-transition-delay: 1s;
+      -moz-transition-delay: 1s;
+      transition-delay: 1s; }

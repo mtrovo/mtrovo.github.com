@@ -1,0 +1,160 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+@mixin transition-delay($transition-time) {
+  -webkit-transition-delay: $transition-time;
+  -moz-transition-delay: $transition-time;
+  transition-delay: $transition-time;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  background-color: #000;
+}
+body {
+  min-height: 100pt;
+  background: transparent;
+  font-family: 'Open Sans';
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+  font-size: 12px;
+}
+
+#hello {
+  max-width: 460pt;
+  min-width: 200pt;
+  padding: 0 10pt;
+  padding-top: 40pt;
+  margin: 0 auto;
+
+  >header {
+    display:none;
+  }
+  article.introduction {
+    color: #000;
+
+    hgroup {
+      h1,h2,h3,h4,h5,h6{
+        letter-spacing:-1px;
+        line-height:40px;
+        font-weight:600;
+        margin-bottom:1px;
+        font-size:2em;
+
+        span {
+          background-color: #ddd;
+          display: inline-block;
+          padding: 0 10px;
+        }
+      }
+
+      h2{
+        letter-spacing: -15px;
+        line-height: 125px;
+        font-size: 11em;
+
+        span {
+          padding: 0 30px 0 10px;
+        }
+      }
+      h3,h4 {
+        letter-spacing: -2px;
+        line-height: 50px;
+        font-size: 3em;
+        font-weight: 400 !important;
+      }
+
+      h5,h6 {
+        font-weight: 300;
+      }
+    }
+
+    dl {
+      letter-spacing: -1px;
+      line-height: 40px;
+      font-weight: 300;
+      font-size: 2em;
+
+      dt {
+        background-color: #ddd;
+        display: inline-block;
+        padding: 0 10px;
+      }
+      dd {
+        position: relative;
+        background-color: #ddd;
+        display: inline-block;
+        padding: 0 10px;
+        margin-left: -4px;
+
+        ul {
+          display: inline;
+          li {
+            display: none;
+            list-style: none;
+            color: #222;
+          }
+          li.active {
+            display: inline-block;
+          }
+          li.active-anim {
+            color:#0ff;
+            -webkit-transition: 250ms;
+            -moz-transition: 250ms;
+            transition: 250ms;
+          }
+        }
+      }
+    }
+
+    figure {
+      display:none;
+    }
+  }
+
+}
+
+
+html.transition {
+  background-color: #fff;
+  @include transition(all, 250ms, linear);
+  @include transition-delay(1s);
+  #hello {
+    article.introduction {
+      color: #fff;
+      @include transition(all, 250ms, linear);
+
+      hgroup {
+        h1,h2,h3,h4,h5,h6{
+          span {
+            background-color: #222;
+            @include transition(all, 250ms, linear);
+            @include transition-delay(1s);
+          }
+        }
+      }
+      dl {
+        dt, dd {
+            background-color: #222;
+            @include transition(all, 250ms, linear);
+            @include transition-delay(1s);
+        }
+      }
+    }
+  }
+
+}
