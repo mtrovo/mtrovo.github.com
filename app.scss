@@ -1,14 +1,37 @@
-@mixin transition($transition-property, $transition-time, $method) {
-    -webkit-transition: $transition-property $transition-time $method;
-    -moz-transition: $transition-property $transition-time $method;
-    -ms-transition: $transition-property $transition-time $method;
-    -o-transition: $transition-property $transition-time $method;
-    transition: $transition-property $transition-time $method;
+
+
+@mixin transition($transition-property, $transition-time, $method:'') {
+    -webkit-transition: $transition-property $transition-time #{$method};
+    -moz-transition: $transition-property $transition-time #{$method};
+    -ms-transition: $transition-property $transition-time #{$method};
+    -o-transition: $transition-property $transition-time #{$method};
+    transition: $transition-property $transition-time #{$method};
 }
+
 @mixin transition-delay($transition-time) {
   -webkit-transition-delay: $transition-time;
   -moz-transition-delay: $transition-time;
   transition-delay: $transition-time;
+}
+
+@mixin border-radius($value) {
+   -webkit-border-radius: $value;
+ -moz-border-radius: $value / $value;
+ -khtml-border-radius: $value / $value;
+ border-radius: $value / $value;
+}
+
+@mixin scale($val) {
+  -webkit-transform: scale($val, $val);
+  -moz-transform: scale($val, $val);
+  -ms-transform: scale($val, $val);
+  -o-transform: scale($val, $val);
+  transform: scale($val, $val);
+}
+@mixin box-shadow($top, $left, $blur, $margin, $color) {
+  -webkit-box-shadow:$top $left $blur $margin $color;
+  -moz-box-shadow:$top $left $blur $margin $color;
+  box-shadow:$top $left $blur $margin $color;
 }
 
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -23,6 +46,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 
 html {
   background-color: #000;
+  height:100%;
 }
 body {
   min-height: 100pt;
@@ -32,6 +56,7 @@ body {
   -moz-perspective: 800px;
   perspective: 800px;
   font-size: 12px;
+  min-height: 100%;
 }
 
 #hello {
@@ -155,6 +180,68 @@ html.transition {
         }
       }
     }
+  }
+
+}
+
+
+.socmed-links{
+  margin-top: 100px;
+  text-align:center;
+  position:absolute;
+  width:100%;
+  bottom:10px;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+  }
+  .effect-1 {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin: 0 1px;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+    font-family: 'Raleway', sans-serif;
+    font-weight:100;
+    background-color: #222;
+    -webkit-transform: translateZ(0);
+    
+    &.twitter:hover {
+      background-color: rgba(0, 172, 238, 0.7);
+    }
+    &.github:hover {
+      background-color: rgba(23, 21, 21, 0.7);
+    }
+    &.facebook:hover {
+      background-color: rgba(59, 89, 152, 0.8);
+    }
+    &.linkedin:hover {
+      background-color: rgba(14, 118, 168, 0.7);
+    }
+    &:hover {
+      @include transition(background-color, 0.2s);
+      
+      &:after {
+        @include scale(1);
+        @include transition(transform, 0.2s);
+      }
+    }
+  }
+
+  .effect-1:after {
+    position: absolute;
+    top:-2px;
+    left: -2px;
+    content: '';
+    height: 100%;
+    width: 100%;
+    padding: 2px;
+    @include box-shadow(0, 0, 0, 2px, #222);
+    @include scale(0.7);
+    @include transition(-webkit-transform, 0.2s);
   }
 
 }
