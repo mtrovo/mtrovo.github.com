@@ -145,13 +145,13 @@ html.transition {
     font-weight: 100;
     background-color: #222;
     -webkit-transform: translateZ(0); }
-    .socmed-links .effect-1.twitter:hover {
+    .socmed-links .effect-1.tw:hover {
       background-color: rgba(0, 172, 238, 0.7); }
     .socmed-links .effect-1.github:hover {
       background-color: rgba(23, 21, 21, 0.7); }
-    .socmed-links .effect-1.facebook:hover {
+    .socmed-links .effect-1.fb:hover {
       background-color: rgba(59, 89, 152, 0.8); }
-    .socmed-links .effect-1.linkedin:hover {
+    .socmed-links .effect-1.lin:hover {
       background-color: rgba(14, 118, 168, 0.7); }
     .socmed-links .effect-1:hover {
       -webkit-transition: background-color 0.2s ;

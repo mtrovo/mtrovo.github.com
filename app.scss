@@ -209,16 +209,16 @@ html.transition {
     background-color: #222;
     -webkit-transform: translateZ(0);
     
-    &.twitter:hover {
+    &.tw:hover {
       background-color: rgba(0, 172, 238, 0.7);
     }
     &.github:hover {
       background-color: rgba(23, 21, 21, 0.7);
     }
-    &.facebook:hover {
+    &.fb:hover {
       background-color: rgba(59, 89, 152, 0.8);
     }
-    &.linkedin:hover {
+    &.lin:hover {
       background-color: rgba(14, 118, 168, 0.7);
     }
     &:hover {
